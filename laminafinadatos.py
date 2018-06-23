@@ -1,10 +1,8 @@
 #coding: utf-8
 import math as m
 import numpy as np
-#from scipy import *
 import matplotlib.pyplot as plt
 
-#movidas para la representación
 
 
 
@@ -45,13 +43,8 @@ while True:
 		break
 	except ValueError:
 		print("Vaya! No te entiendo... Prueba otra vez!")
-'''
-r=0.9
-n=1.5
-l=500 			#lambda, nm
-t=500			#espesor, micras
-Smax=10			#numero de elementos de la lista
-'''
+
+
 #---------------------------------
 #se trata de representar la intensidad transmitida frente al ángulo de incidencia y frente a delta
 #habrá un máximo para cada orden de p
@@ -68,7 +61,7 @@ C=F/(1+F)
 
 def Intens(Ai, t, n, l):
 	At=np.arcsin(np.sin(Ai)/n)
-	d=2*m.pi/l*2*t*n*np.cos(At)			#el desfase delta
+	d=2*m.pi/l*2*t*n*np.cos(At)				#el desfase delta
 	I=1/(1+F*(np.sin(d/2)**2))				#intensidad en funcion de Ai
 	return I
 
